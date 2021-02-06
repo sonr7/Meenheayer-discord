@@ -11,7 +11,7 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-    print('起動しました')
+    print('こんちゃす！')
 
 @client.event
 async def on_message(message):
