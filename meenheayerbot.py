@@ -5,7 +5,7 @@ import random
 from datetime import datetime
 from time import sleep
 
-token = os.environ.get(DISCORD_BOT_TOKEN)
+token = os.environ.get('DISCORD_BOT_TOKEN')
 
 client = discord.Client()
 
