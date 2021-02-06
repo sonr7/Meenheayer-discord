@@ -35,3 +35,5 @@ async def on_message(message):
             if youranswer != answer_kana:
                 huseikai = f'不正解!{answer_kana}({answer_kanji})だよ！'
                 await message.channel.send(huseikai)
+                
+client.run(token)              
