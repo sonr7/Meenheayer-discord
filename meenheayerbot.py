@@ -18,8 +18,7 @@ async def on_ready():
 async def on_message(message):
     if 'Quiz' in message.content:
         with open('MeenheayerQuiz.txt') as minhaya:
-            minhayaquiz = minhaya.read()
-            meenheayer = minhayaquiz.splitlines()
+            meenheayer = minhaya.read().splitlines()
         quiz_dict = {}
         for line in meenheayer:
             quiz, answer = line.split(':')
