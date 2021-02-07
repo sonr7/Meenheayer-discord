@@ -3,6 +3,7 @@ import os
 import asyncio
 import random
 import time
+import tracemalloc
 from datetime import datetime
 
 token = os.environ.get('DISCORD_BOT_TOKEN')
