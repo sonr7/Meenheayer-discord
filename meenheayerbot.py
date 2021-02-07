@@ -13,19 +13,15 @@ client = discord.Client()
 @client.event
 async def on_ready():
     print('こんちゃす！')
+    
+with open('Meenheayer.txt') as f:
+    quiz_dict = {line.split(':')[0]: line.spkit('^')[-1] for line in f.readlines()}
 
 @client.event
 async def on_message(message):
     if 'Quiz' in message.content:
-        with open('MeenheayerQuiz.txt') as minhaya:
-            meenheayer = minhaya.read().splitlines()
-        quiz_dict = {}
-        for line in meenheayer:
-            quiz, answer = line.split(':')
-            answer_kana, answer_kanji = answer.split('^')
-            quiz_dict[quiz] = answer_kana
-        now_quiz = random.choice(quiz_dict[quiz])
-        await message.channel.send(now_quiz)
+        chosen = random.choice(quiz_dict)
+        await message.channel.send(chosen)
         time.sleep(10)
         if '' in message.content:
             await message.channel.send('時間切れ！')
