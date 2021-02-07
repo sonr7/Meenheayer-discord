@@ -2,8 +2,8 @@ import discord
 import os
 import asyncio
 import random
+import time
 from datetime import datetime
-from time import sleep
 
 token = os.environ.get('DISCORD_BOT_TOKEN')
 
