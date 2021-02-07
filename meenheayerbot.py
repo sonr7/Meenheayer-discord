@@ -20,7 +20,7 @@ async def on_message(message):
             minhayaquiz = minhaya.read()
             meenheayer = minhayaquiz.splitlines()
         quiz_dict = {}
-        for line in minhayaquiz:
+        for line in meenheayer:
             quiz, answer = line.split(':')
             answer_kana, answer_kanji = answer.split('^')
             quiz_dict[quiz] = answer_kana
