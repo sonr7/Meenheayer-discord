@@ -22,7 +22,7 @@ async def on_message(message):
     if 'Quiz' in message.content:
         chosen = random.choice(list(quiz_dict))
         await message.channel.send(chosen)
-        time.sleep(10)
+        time.sleep(15)
         if '' in message.content:
             await message.channel.send('時間切れ！')
         if 'answer:' in message.content:
