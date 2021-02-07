@@ -14,7 +14,7 @@ client = discord.Client()
 async def on_ready():
     print('こんちゃす！')
     
-with open('Meenheayer.txt') as f:
+with open('MeenheayerQuiz.txt') as f:
     quiz_dict = {line.split(':')[0]: line.spkit('^')[-1] for line in f.readlines()}
 
 @client.event
