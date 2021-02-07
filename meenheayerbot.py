@@ -25,7 +25,7 @@ async def on_message(message):
             quiz, answer = line.split(':')
             answer_kana, answer_kanji = answer.split('^')
             quiz_dict[quiz] = answer_kana
-        now_quiz = random.choice(quiz)
+        now_quiz = random.choice(quiz_dict[quiz])
         await message.channel.send(now_quiz)
         time.sleep(10)
         if '' in message.content:
