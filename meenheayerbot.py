@@ -20,7 +20,7 @@ with open('MeenheayerQuiz.txt') as f:
 @client.event
 async def on_message(message):
     if 'Quiz' in message.content:
-        chosen = random.choice(quiz_dict)
+        chosen = random.choice(list(quiz_dict))
         await message.channel.send(chosen)
         time.sleep(10)
         if '' in message.content:
