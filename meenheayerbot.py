@@ -18,6 +18,7 @@ async def on_message(message):
     if 'Quiz' in message.content:
         with open('MeenheayerQuiz.txt') as minhaya:
             minhayaquiz = minhaya.read()
+            meenheayer = minhayaquiz.splitlines()
         quiz_dict = {}
         for line in minhayaquiz:
             quiz, answer = line.split(':')
