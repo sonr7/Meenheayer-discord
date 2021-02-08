@@ -22,16 +22,20 @@ async def on_message(message):
     if 'Quiz' in message.content:
         chosen = random.choice(list(quiz_dict))
         await message.channel.send(chosen)
-        datet = int(datetime.now()) + 20
         answer_kana = quiz_dict[chosen][0]
         answer_kanji = quiz_dict[chosen][1]
-        if 'answer:' in message.content:
-            answer, youranswer = message.content.split(':')
-            if youranswer == answer_kana:
-                seikai = f'正解!{answer_kana}({answer_kanji})だよ！'
-                await message.channel.send(seikai)
-            if youranswer != answer_kana:
-                huseikai = f'不正解!{answer_kana}({answer_kanji})だよ！'
-                await message.channel.send(huseikai)
-                
+        count = 0
+        while count <= 20:
+            if 'answer:' in message.content:
+                answer, youranswer = message.content.split(':')
+                if youranswer == answer_kana:
+                    seikai = f'正解!{answer_kana}({answer_kanji})だよ！'
+                    await message.channel.send(seikai)
+                elif youranswer != answer_kana:
+                    huseikai = f'不正解!{answer_kana}({answer_kanji})だよ！'
+                    await message.channel.send(huseikai)
+            elif '' in message.content:
+                time.sleep(1)
+                count += 1
+                 
 client.run(token)              
