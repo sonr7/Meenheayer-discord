@@ -22,7 +22,7 @@ async def on_message(message):
     if 'Quiz' in message.content:
         chosen = random.choice(list(quiz_dict))
         await message.channel.send(chosen)
-        datet = datetime.now() + 20
+        datet = int(datetime.now()) + 20
         answer_kana = quiz_dict[chosen][0]
         answer_kanji = quiz_dict[chosen][1]
         if 'answer:' in message.content:
