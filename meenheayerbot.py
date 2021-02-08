@@ -37,5 +37,7 @@ async def on_message(message):
             elif '' in message.content:
                 time.sleep(1)
                 count += 1
+        if count = 20:
+            await message.channel.send('時間切れ!')
                  
 client.run(token)              
