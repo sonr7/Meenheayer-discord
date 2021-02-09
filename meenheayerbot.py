@@ -37,7 +37,7 @@ async def on_message(message):
                 elif youranswer != answer_kana:
                     huseikai = f'不正解!{answer_kana}({answer_kanji})だよ！'
                     await message.channel.send(huseikai)
-               except asyncio.TimeoutError:
+                except asyncio.TimeoutError:
                     await message.channel.send('時間切れ!')
                  
 client.run(token)              
