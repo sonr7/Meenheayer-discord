@@ -27,7 +27,6 @@ async def on_message(message):
         count = 0
         while count <= 20:
             if 'answer:' in message.content:
-                break
                 answer, youranswer = message.content.split(':')
                 if youranswer == answer_kana:
                     seikai = f'正解!{answer_kana}({answer_kanji})だよ！'
@@ -35,8 +34,9 @@ async def on_message(message):
                 elif youranswer != answer_kana:
                     huseikai = f'不正解!{answer_kana}({answer_kanji})だよ！'
                     await message.channel.send(huseikai)
+                break
             elif '' in message.content:
-                time.sleep(1)
+                await asyncio.sleep(1)
                 count += 1
         if count == 20:
             await message.channel.send('時間切れ!')
