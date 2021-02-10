@@ -28,9 +28,9 @@ async def on_message(message):
         while count <= 20:
             try:
                 def check(m):
-                    return m.channel.id == message.channel.id and m.content.startswith("answer:")
+                    return m.channel.id == message.channel.id and m.content.startswith("answer")
                 answer_message = await client.wait_for("message", check=check, timeout=20)
-                answer, youranswer = message.content.split(':')
+                answer, youranswer = message.content.split()
                 if youranswer == answer_kana:
                     seikai = f'正解!{answer_kana}({answer_kanji})だよ！'
                     await message.channel.send(seikai)
