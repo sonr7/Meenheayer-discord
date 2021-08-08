@@ -39,5 +39,6 @@ async def on_message(message):
                     await message.channel.send(huseikai)
             except asyncio.TimeoutError:
                     await message.channel.send('時間切れ!')
+        return
                  
 client.run(token)              
